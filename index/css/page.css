@@ -1,0 +1,1033 @@
+body > ol{
+    text-align: right;
+    margin: 120px 50px 20px 0;
+}
+body > ol li{
+    display: inline-block;
+}
+body > ol li:not(:last-of-type)::after{
+    content: '>';
+}
+aside::-webkit-scrollbar {display:none;}
+
+aside > h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+section > aside > nav > ul > li > a{
+    font-size: 18px;
+    font-weight: 700;
+}
+section.product > ul li figure figcaption dl > *{
+    font-size: 18px;
+    line-height: 36px;
+}
+
+section.product > ul li figure figcaption dl > dt{
+    font-weight: 700;
+}
+
+
+@media screen and (min-width: 1280px){
+    section.product{
+        display: flex;
+    }
+    aside{
+        width: 15%;
+        position: fixed;
+        left: 0;
+        top: 98px;
+        height: 90%;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+        line-height: 36px;
+        overflow: scroll;
+        padding: 20px;
+    }
+    aside > nav ul{
+        height: 110vh;
+    }
+    aside > nav ul li ol{
+        height: 220px;
+        overflow: hidden;
+        transition-duration: 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    aside > nav ul li:nth-of-type(3) ol{
+        height: 144px;
+    }
+    aside > nav ul li ol.more{
+        height: 100%;
+    }
+    /* aside > nav ul li ol.more li:nth-of-type(6){
+        order: 1;
+    } */
+    aside > nav ul li span.active + ol{
+        opacity: 0;
+        height: 0;
+        /* height: 100%; */
+    }
+    aside > nav ul li ol li:nth-of-type(6){
+        cursor: pointer;
+        transition: 0.01s;
+    }
+
+    aside > nav ul li::after{
+        display: block; visibility: hidden; content: ''; clear: both;
+    }
+    aside > nav ul li span.material-icons{
+        line-height: 36px;
+        font-size: 24px;
+        float: right;
+        cursor: pointer;
+    }
+    body > section.product aside nav ul li span.active + ol li:nth-of-type(6){
+        cursor: pointer;
+    }
+
+
+
+
+
+    section.product > ul {
+        margin: 0 0 100px 10% ;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    section.product > ul > li{
+        width: 30%;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    section.product > ul > li:nth-of-type(3n+1){
+        margin-left: 6.5%;
+    }
+
+    /* buy.html 시작 */
+
+    article{
+        display: flex;
+    }
+    article > section{
+        flex: 2.5;
+        position: relative;
+    }
+    article > section ul{
+        /* position: absolute; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    article > section ul{
+        display: none;
+    }
+    article > section ul.active{
+        display: flex;
+    }
+    article > section > ul li {
+        margin-bottom: 20px;
+    }
+    article > section ul li:nth-of-type(2n){
+        margin-left: 20px;
+    }
+    article form{
+        flex: 1;
+    }
+    article form fieldset p{
+        line-height: 36px;
+        color: #555;
+    }
+    article form fieldset span.price{
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 500;
+    }
+
+    article form fieldset ul:not(:last-of-type){
+        display: flex;
+        flex-wrap: wrap;
+    }
+    article form fieldset ul:first-of-type li:not(:first-of-type){
+        margin-left: 20px;
+    }
+    article form fieldset ul li{
+        position: relative;
+    }
+    
+    /* article form fieldset ul.redioColor li label::after{
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+    } */
+    
+    article form fieldset ul.radioColor li label{
+        cursor: pointer;
+        display: inline-block;
+    }
+    article form fieldset ul li input{
+        display: none;
+    }
+
+    article form fieldset ul.radioColor li input[type=radio]:checked +label::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid #aaa;
+    }
+
+    article form fieldset ul.radioSize{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    article form fieldset ul.radioSize li{
+        width: 72px;
+        height: 48px;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+    article form fieldset ul.radioSize li.out{
+        background-color: #ccc;
+        cursor: auto;
+    }
+    article form fieldset ul.radioSize li label{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+    article form fieldset ul.radioSize li:not(.out) label{
+        cursor: pointer;
+    }
+    article form fieldset ul.radioSize li:not(.out) input[type=radio]:checked + label{
+        border: 3px solid black;
+    }
+
+    article form fieldset.option::after{
+        display: block; visibility: hidden; clear: both;
+        content: '';
+    }
+
+    article form fieldset.option > div:first-of-type > span:first-of-type{
+        float: right;
+    }
+    article form fieldset.option > div > span:not(:first-of-type){
+        color: #555;
+    }
+    article form fieldset.option > p{
+        font-size: 24px;
+        line-height: 36px;
+    }
+    article form fieldset.option > div:last-of-type{
+        display: flex;
+        justify-content: flex-end;
+    }
+    article form fieldset.option > div:last-of-type button{
+        background-color: white;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+    }
+    article form fieldset.option > div:last-of-type button:first-of-type{
+        width: 50px; height: 50px;
+    }
+    article form fieldset.option > div:last-of-type button:not(:first-of-type){
+        width: 150px;
+        height: 50px;
+        margin-left: 20px;
+    }
+
+
+    article form fieldset.option > div.totalprice{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    article form fieldset.option > div.totalprice span:first-of-type{
+        border: 1px solid #555;
+        width: 100px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    article form fieldset.option > div.totalprice span:first-of-type input{
+        border: none;
+        font-size: 14px;
+        width: 50%;
+        border: none;
+        background-color: white;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+
+    /* 총상품금액 부분 fin */
+
+
+    article form > div:last-of-type div{
+        position: absolute;
+        top: -100px;
+        left: 0;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 120%;
+        /* display: flex; */
+        display: none;
+        justify-content: center;
+    }
+    article form > div:last-of-type div.on{
+        display: flex;
+    }
+
+    article form > div:last-of-type div > span{
+        width: 80%;
+        padding: 30px 100px;
+        box-sizing: border-box;
+        height: 40%;
+        background-color: white;
+        position: absolute;
+        top: 100px;
+    }
+    article form > div:last-of-type div > span ul::after{
+        display: block; content: ''; clear: both; visibility: hidden;
+    }
+    article form > div:last-of-type div > span ul h3{
+        line-height: 36px;
+        text-align: center;
+    }
+    article form > div:last-of-type div > span ul > a{
+        position: absolute;
+        top: 36px;
+        right: 36px;
+    }
+    article form > div:last-of-type div > span ul > hr{
+        margin-bottom: 50px;
+    }
+    article form > div:last-of-type div > span ul li{
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        line-height: 36px;
+    }
+    article form > div:last-of-type div > span ul li strong{
+        flex: 1.5;
+    }
+    article form > div:last-of-type div > span ul li p{
+        flex: 3.5;
+        color: #555;
+    }
+    
+
+    article form ul:last-of-type > li{
+        display: block;
+    }
+    article form ul:last-of-type > li a::after{
+        display: block; content: ''; visibility: hidden; clear: both;
+    }
+    article form ul:last-of-type > li a img{
+        float: right;
+    }
+    mark{
+        background-color: #000;
+        color: #fff;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    b{
+        color: #f01c1c;
+    }
+
+    /* 제공공시 배송안내 반품 A/S ing */
+
+
+    body > section.recommend{
+        margin-bottom: 100px;
+    }
+
+    body > section.recommend h2{
+        text-align: center;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+    body > section.recommend > ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    body > section.recommend ul li{
+        width: 13%;
+    }
+    body > section.recommend ul li:not(:first-of-type){
+        margin-left: 20px;
+    }
+    body > section.recommend ul li figure > *{
+        cursor: pointer;
+    }
+    body > section.recommend ul li figure figcaption dl dt{
+        margin-bottom: 9px;
+    }
+    body > section.recommend ul li figure figcaption dl dd{
+        font-size: 18px;
+        color: #555;
+    }
+    /* 추천상품 fin */
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px){
+    section.product{
+        display: flex;
+    }
+    aside{
+        display: none;
+    }
+    section.product > ul {
+        /* margin: 0 0 100px 10% ; */
+        padding: 0 50px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    section.product > ul > li{
+        width: 45%;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    section.product > ul > li:nth-of-type(2n){
+        margin-left: 6.5%;
+    }
+
+    /* buy.html 시작 */
+
+    article{
+        display: flex;
+    }
+    article > section{
+        flex: 2.5;
+        position: relative;
+    }
+    article > section ul{
+        /* position: absolute; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    article > section ul{
+        display: none;
+    }
+    article > section ul.active{
+        display: flex;
+    }
+    article > section > ul li {
+        margin-bottom: 20px;
+    }
+    article form{
+        flex: 1;
+    }
+    article form fieldset p{
+        line-height: 36px;
+        color: #555;
+    }
+    article form fieldset span.price{
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 500;
+    }
+
+    article form fieldset ul:not(:last-of-type){
+        display: flex;
+        flex-wrap: wrap;
+    }
+    article form fieldset ul:first-of-type li:not(:first-of-type){
+        margin-left: 20px;
+    }
+    article form fieldset ul li{
+        position: relative;
+    }
+    
+    /* article form fieldset ul.redioColor li label::after{
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+    } */
+    
+    article form fieldset ul.radioColor li label{
+        cursor: pointer;
+        display: inline-block;
+    }
+    article form fieldset ul li input{
+        display: none;
+    }
+
+    article form fieldset ul.radioColor li input[type=radio]:checked +label::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid #aaa;
+    }
+
+    article form fieldset ul.radioSize{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    article form fieldset ul.radioSize li{
+        width: 72px;
+        height: 48px;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+    article form fieldset ul.radioSize li.out{
+        background-color: #ccc;
+        cursor: auto;
+    }
+    article form fieldset ul.radioSize li label{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+    article form fieldset ul.radioSize li:not(.out) label{
+        cursor: pointer;
+    }
+    article form fieldset ul.radioSize li:not(.out) input[type=radio]:checked + label{
+        border: 3px solid black;
+    }
+
+    article form fieldset.option::after{
+        display: block; visibility: hidden; clear: both;
+        content: '';
+    }
+
+    article form fieldset.option > div:first-of-type > span:first-of-type{
+        float: right;
+    }
+    article form fieldset.option > div > span:not(:first-of-type){
+        color: #555;
+    }
+    article form fieldset.option > p{
+        font-size: 24px;
+        line-height: 36px;
+    }
+    article form fieldset.option > div:last-of-type{
+        display: flex;
+        justify-content: flex-end;
+    }
+    article form fieldset.option > div:last-of-type button{
+        background-color: white;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+    }
+    article form fieldset.option > div:last-of-type button:first-of-type{
+        width: 50px; height: 50px;
+    }
+    article form fieldset.option > div:last-of-type button:not(:first-of-type){
+        width: 150px;
+        height: 50px;
+        margin-left: 20px;
+    }
+
+
+    article form fieldset.option > div.totalprice{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    article form fieldset.option > div.totalprice span:first-of-type{
+        border: 1px solid #555;
+        width: 100px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    article form fieldset.option > div.totalprice span:first-of-type input{
+        border: none;
+        font-size: 14px;
+        width: 50%;
+        border: none;
+        background-color: white;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+
+    /* 총상품금액 부분 fin */
+
+
+    article form > div:last-of-type div{
+        position: absolute;
+        top: -100px;
+        left: 0;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 120%;
+        /* display: flex; */
+        display: none;
+        justify-content: center;
+    }
+    article form > div:last-of-type div.on{
+        display: flex;
+    }
+
+    article form > div:last-of-type div > span{
+        width: 80%;
+        padding: 30px 100px;
+        box-sizing: border-box;
+        height: 40%;
+        background-color: white;
+        position: absolute;
+        top: 100px;
+    }
+    article form > div:last-of-type div > span ul::after{
+        display: block; content: ''; clear: both; visibility: hidden;
+    }
+    article form > div:last-of-type div > span ul h3{
+        line-height: 36px;
+        text-align: center;
+    }
+    article form > div:last-of-type div > span ul > a{
+        position: absolute;
+        top: 36px;
+        right: 36px;
+    }
+    article form > div:last-of-type div > span ul > hr{
+        margin-bottom: 50px;
+    }
+    article form > div:last-of-type div > span ul li{
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        line-height: 36px;
+    }
+    article form > div:last-of-type div > span ul li strong{
+        flex: 1.5;
+    }
+    article form > div:last-of-type div > span ul li p{
+        flex: 3.5;
+        color: #555;
+    }
+    
+
+    article form ul:last-of-type > li{
+        display: block;
+    }
+    article form ul:last-of-type > li a::after{
+        display: block; content: ''; visibility: hidden; clear: both;
+    }
+    article form ul:last-of-type > li a img{
+        float: right;
+    }
+    mark{
+        background-color: #000;
+        color: #fff;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    b{
+        color: #f01c1c;
+    }
+
+    /* 제공공시 배송안내 반품 A/S ing */
+
+
+    body > section.recommend{
+        margin-bottom: 100px;
+    }
+
+    body > section.recommend h2{
+        text-align: center;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+    body > section.recommend > ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    body > section.recommend ul li{
+        width: 13%;
+    }
+    body > section.recommend ul li:not(:first-of-type){
+        margin-left: 20px;
+    }
+    body > section.recommend ul li figure > *{
+        cursor: pointer;
+    }
+    body > section.recommend ul li figure figcaption dl dt{
+        margin-bottom: 9px;
+    }
+    body > section.recommend ul li figure figcaption dl dd{
+        font-size: 18px;
+        color: #555;
+    }
+    /* 추천상품 fin */
+
+}
+
+@media screen and (max-width: 767px){
+
+    ol > li a{
+        font-size: 12px;
+    }
+    body > ol{
+        text-align: right;
+        margin: 70px 0 20px 0;
+    }
+    section.product > ul li figure figcaption dl > *{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    section.product{
+        display: flex;
+    }
+    aside{
+        display: none;
+    }
+
+    section.product > ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    section.product > ul > li{
+        width: 45%;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    section.product > ul > li:nth-of-type(2n){
+        margin-left: 6.5%;
+    }
+
+    /* buy.html 시작 */
+
+    article{
+        display: flex;
+        flex-direction: column;
+    }
+    article > section{
+        order: 2;
+        position: relative;
+    }
+    article > section ul{
+        /* position: absolute; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    article > section ul{
+        display: none;
+    }
+    article > section ul.active{
+        display: flex;
+    }
+    article > section > ul li {
+        margin-bottom: 20px;
+    }
+    article > section > ul li img{
+        width: 100%;
+    }
+
+    article form fieldset p{
+        line-height: 36px;
+        color: #555;
+    }
+    article form fieldset span.price{
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 500;
+    }
+
+    article form fieldset ul:not(:last-of-type){
+        display: flex;
+        flex-wrap: wrap;
+    }
+    article form fieldset ul:first-of-type li:not(:first-of-type){
+        margin-left: 20px;
+    }
+    article form fieldset ul li{
+        position: relative;
+    }
+    
+    article form fieldset ul.radioColor li{
+        width: 15%;
+    }
+    /* article form fieldset ul.redioColor li label::after{
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+    } */
+    
+    article form fieldset ul.radioColor li label{
+        cursor: pointer;
+        display: inline-block;
+    }
+    article form fieldset ul.radioColor li label img{
+        width: 100%;
+    }
+    article form fieldset ul li input{
+        display: none;
+    }
+
+    article form fieldset ul.radioColor li input[type=radio]:checked +label::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid #aaa;
+    }
+
+    article form fieldset ul.radioSize{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    article form fieldset ul.radioSize li{
+        width: 72px;
+        height: 48px;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    article form fieldset ul.radioSize li.out{
+        background-color: #ccc;
+        cursor: auto;
+    }
+    article form fieldset ul.radioSize li label{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+    article form fieldset ul.radioSize li:not(.out) label{
+        cursor: pointer;
+    }
+    article form fieldset ul.radioSize li input[type=radio]:checked + label{
+        border: 3px solid black;
+    }
+
+    /* size 부분 active 해야됨 */
+
+    article form fieldset.option::after{
+        display: block; visibility: hidden; clear: both;
+        content: '';
+    }
+
+    article form fieldset.option > div:first-of-type > span:first-of-type{
+        float: right;
+    }
+    article form fieldset.option > div > span:not(:first-of-type){
+        color: #555;
+    }
+    article form fieldset.option > p{
+        font-size: 24px;
+        line-height: 36px;
+    }
+    article form fieldset.option > div:last-of-type{
+        display: flex;
+        justify-content: flex-end;
+    }
+    article form fieldset.option > div:last-of-type button{
+        background-color: white;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+    }
+    article form fieldset.option > div:last-of-type button:first-of-type{
+        width: 50px; height: 50px;
+    }
+    article form fieldset.option > div:last-of-type button:not(:first-of-type){
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+    }
+
+
+    article form fieldset.option > div.totalprice{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    article form fieldset.option > div.totalprice span:first-of-type{
+        border: 1px solid #555;
+        width: 100px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    article form fieldset.option > div.totalprice span:first-of-type input{
+        border: none;
+        font-size: 14px;
+        width: 50%;
+        border: none;
+        background-color: white;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+
+    /* 총상품금액 부분 ing */
+
+
+    article form > div:last-of-type div{
+        position: absolute;
+        top: -100px;
+        left: 0;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 120%;
+        /* display: flex; */
+        display: none;
+        justify-content: center;
+    }
+    article form > div:last-of-type div.on{
+        display: flex;
+    }
+
+    article form > div:last-of-type div > span{
+        width: 80%;
+        padding: 15px 10px;
+        box-sizing: border-box;
+        background-color: white;
+        position: absolute;
+        top: 100px;
+    }
+    article form > div:last-of-type div > span ul::after{
+        display: block; content: ''; clear: both; visibility: hidden;
+    }
+    article form > div:last-of-type div > span ul h3{
+        line-height: 18px;
+        text-align: center;
+    }
+    article form > div:last-of-type div > span ul > a{
+        position: absolute;
+        top: 18px;
+        right: 5px;
+    }
+    article form > div:last-of-type div > span ul > a img{
+        width: 50%;
+    }
+    article form > div:last-of-type div > span ul li{
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    article form > div:last-of-type div > span ul li strong{
+        flex: 1.5;
+    }
+    article form > div:last-of-type div > span ul li p{
+        flex: 3.5;
+        color: #555;
+    }
+    
+
+    article form ul:last-of-type > li{
+        display: block;
+    }
+    article form ul:last-of-type > li a::after{
+        display: block; content: ''; visibility: hidden; clear: both;
+    }
+    article form ul:last-of-type > li a img{
+        float: right;
+    }
+    mark{
+        background-color: #000;
+        color: #fff;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    b{
+        color: #f01c1c;
+    }
+
+    /* 제공공시 배송안내 반품 A/S ing */
+
+
+    body > section.recommend{
+        margin-bottom: 100px;
+    }
+
+    body > section.recommend h2{
+        text-align: center;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+    body > section.recommend > ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between
+    }
+    body > section.recommend ul li{
+        width: 45%;
+    }
+    body > section.recommend ul li:not(:last-of-type){
+        margin-bottom: 20px;
+    }
+    body > section.recommend ul li figure figcaption dl dd{
+        font-size: 12px;
+    }
+    /* 추천상품 fin */
+
+
+    
+    
+
+
+
+}

@@ -45,11 +45,18 @@ $(document).ready(function(){
     });
   
     $('body > section.product aside nav ul li span').click(function(){
+      let ol = $(this).next();
       if(!$(this).hasClass('active')){
         $(this).addClass('active');
+        ol.css({'height':0});
         $(this).text("keyboard_arrow_down");
       }else{
         $(this).removeClass('active');
+        if(ol.hasClass('more')){
+          ol.css({'height':ol.children().length*36+'px'});
+        }else{
+          ol.css({'height':220+'px'});
+        }
         $(this).text("keyboard_arrow_up");
       }
     });

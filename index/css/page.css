@@ -48,7 +48,7 @@ section.product > ul li figure figcaption dl > dt{
         height: 110vh;
     }
     aside > nav ul li ol{
-        height: 220px;
+        /* height: 220px; */
         overflow: hidden;
         transition-duration: 0.3s;
         display: flex;

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     var swiper = new Swiper('.swiper1',{
         effect: 'coverflow',
         grabCursor: true,

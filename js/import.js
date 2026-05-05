@@ -83,9 +83,7 @@ $(document).ready(function(){
 
 
     $('body > header div.mobileMui').click(function(){
-      if(
-        !$(this).hasClass('active')
-      ){
+      if(!$(this).hasClass('active')){
         $(this).addClass('active');
         $('header nav').addClass('active');
         $('body').css('overflow','hidden');
@@ -94,7 +92,7 @@ $(document).ready(function(){
         $('header nav').removeClass('active');
         $('body').css('overflow','auto');
       }
-    })
+    });
 
     $('body > header nav ul li span.material-icons').click(function(){
       if(!$(this).hasClass('more')){
@@ -104,7 +102,7 @@ $(document).ready(function(){
         $(this).removeClass('more');
         $(this).text("keyboard_arrow_down");
       }
-    })
+    });
     $(".radioColor li").click(function(){
       var idx = $(this).index();
       $(".tab > ul").removeClass("active");
@@ -133,45 +131,6 @@ $(document).ready(function(){
         }
       }
     }
-
-      $('body > header div.mobileMui').click(function(){
-        if(
-          !$(this).hasClass('active')
-        ){
-          $(this).addClass('active');
-          $('header nav').addClass('active');
-          $('body').css('overflow','hidden');
-        }else{
-          $(this).removeClass('active');
-          $('header nav').removeClass('active');
-          $('body').css('overflow','auto');
-        }
-      })
-
-      $('body > header nav ul li span.material-icons').click(function(){
-        if(!$(this).hasClass('more')){
-          $(this).addClass('more');
-          $(this).text("keyboard_arrow_up");
-        }else{
-          $(this).removeClass('more');
-          $(this).text("keyboard_arrow_down");
-        }
-      })
-      $(".radioColor li").click(function(){
-        var idx = $(this).index();
-        $(".tab > ul").removeClass("active");
-        $(".tab > ul").eq(idx).addClass("active");
-      })
-
-      $(".popup li").click(function() {
-        var idx = $(this).index();
-        // alert(idx)
-        $(".popup_text").removeClass("on");
-        $(".popup_text").eq(idx).addClass("on");
-        // $(".popup_cont > div").hide();
-        // $(".popup_cont > div").eq(idx).show();
-      })
-
 
 });
 

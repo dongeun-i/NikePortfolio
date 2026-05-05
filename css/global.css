@@ -4,6 +4,14 @@ body{
     padding: 0 50px;
     box-sizing: border-box;
 }
+body > section {
+    max-width: 80vw;
+    margin: 0 auto;
+}
+footer > *{
+    max-width: 80vw;
+    margin: 0 auto;
+}
 input[radio]{
     text-indent:-9999px
 }
